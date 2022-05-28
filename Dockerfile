@@ -15,8 +15,11 @@ COPY content/vsftpd.conf /etc/vsftpd.conf
 COPY conf /etc/nginx
 EXPOSE 21 8077 20
 
-RUN systemctl enable nginx
-RUN systemctl enable vsftpd
+RUN update-rc.d vsftpd enable
+
+RUN update-rc.d nginx enable
+# RUN systemctl enable nginx
+# RUN systemctl enable vsftpd
 COPY ./start_up/startup.sh "${STARTUPDIR}"/
 RUN find "${STARTUPDIR}"/ -name '*.sh' -exec chmod a+x {} +
 RUN $STARTUPDIR/startup.sh
