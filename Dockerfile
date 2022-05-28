@@ -8,5 +8,9 @@ RUN rm /etc/vsftpd.conf
 COPY content/vsftpd.conf /etc/vsftpd.conf
 COPY conf /etc/nginx
 EXPOSE 21 8077 20
+RUN systemctl enable nginx
+RUN systemctl enable vsftpd
 
-# ENTRYPOINT ["tail", "-f", "/dev/null"]
+
+
+ENTRYPOINT ["tail", "-f", "/dev/null"]
