@@ -1,11 +1,12 @@
 FROM nginx
 RUN rm /etc/nginx/conf.d/default.conf
 RUN apt update
-RUN apt install lsof nano netcat procps -y
+RUN apt install lsof nano netcat procps vsftpd -y
 #RUN rm /etc/nginx/nginx.conf /etc/nginx/conf.d/default.conf
-
+RUN rm /etc/vsftpd.conf
 #COPY content /usr/share/nginx/html
+COPY content/vsftpd.conf /etc/vsftpd.conf
 COPY conf /etc/nginx
-EXPOSE 21 8077
+EXPOSE 21 8077 20
 
 ENTRYPOINT ["tail", "-f", "/dev/null"]
