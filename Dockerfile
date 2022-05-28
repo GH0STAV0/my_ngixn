@@ -9,4 +9,4 @@ COPY content/vsftpd.conf /etc/vsftpd.conf
 COPY conf /etc/nginx
 EXPOSE 21 8077 20
 
-ENTRYPOINT ["tail", "-f", "/dev/null"]
+# ENTRYPOINT ["tail", "-f", "/dev/null"]
