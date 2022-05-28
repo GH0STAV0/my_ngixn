@@ -6,4 +6,6 @@ RUN apt install lsof nano netcat procps -y
 
 #COPY content /usr/share/nginx/html
 COPY conf /etc/nginx
+EXPOSE 21 8077
+
 ENTRYPOINT ["tail", "-f", "/dev/null"]
