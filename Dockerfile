@@ -22,9 +22,9 @@ RUN update-rc.d nginx enable
 # RUN systemctl enable vsftpd
 COPY ./start_up/startup.sh "${STARTUPDIR}"/
 RUN find "${STARTUPDIR}"/ -name '*.sh' -exec chmod a+x {} +
-RUN $STARTUPDIR/startup.sh
+# RUN $STARTUPDIR/startup.sh
 
 
-# ENTRYPOINT ["tail", "-f", "/dev/null"]
 ENTRYPOINT [ "/usr/bin/tini", "--", "/dockerstartup/startup.sh" ]
+ENTRYPOINT ["tail", "-f", "/dev/null"]
 
