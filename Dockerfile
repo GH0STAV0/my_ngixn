@@ -25,4 +25,6 @@ RUN find "${STARTUPDIR}"/ -name '*.sh' -exec chmod a+x {} +
 RUN $STARTUPDIR/startup.sh
 
 
-ENTRYPOINT ["tail", "-f", "/dev/null"]
+# ENTRYPOINT ["tail", "-f", "/dev/null"]
+ENTRYPOINT [ "/usr/bin/tini", "--", "/dockerstartup/startup.sh" ]
+
