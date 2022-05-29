@@ -18,6 +18,22 @@ COPY conf /etc/nginx
 RUN update-rc.d vsftpd enable
 
 RUN update-rc.d nginx enable
+
+RUN addgroup ftpusers
+# RUN useradd -m -s /bin/bash -g root headless
+# RUN echo "headless:1" | /usr/sbin/chpasswd
+# RUN echo "headless    ALL=(ALL) ALL" >> /etc/sudoers
+RUN useradd -rm -d /home/test1 -s /bin/bash -g ftpusers  -u 1000 test1
+
+RUN  echo 'test1:1212' | chpasswd
+
+
+
+
+
+
+
+
 # RUN systemctl enable nginx
 # RUN systemctl enable vsftpd
 COPY ./start_up/startup.sh "${STARTUPDIR}"/
