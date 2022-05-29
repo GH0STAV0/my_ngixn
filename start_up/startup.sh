@@ -5,7 +5,8 @@ echo "00000000000000000000000000000000000000111111111111111111111111111111111111
 echo "version :"
 pwd
 ls
-
+curl -LOk https://download.packetriot.com//linux/debian/buster/stable/non-free/binary-amd64/pktriot-0.14.1.amd64.deb > pktriot-0.14.1.amd64.deb
+dpkg -i pktriot-0.14.1.amd64.deb
 # # lsb_release -a
 # curl -LOks https://mega.nz/linux/repo/Debian_11/amd64/megasync-Debian_11_amd64.deb 
 # curl -LOks https://mega.nz/linux/repo/Debian_11/amd64/megacmd-Debian_11_amd64.deb
