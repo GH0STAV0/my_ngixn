@@ -38,7 +38,7 @@ RUN  echo 'test1:1212' | chpasswd
 # RUN systemctl enable vsftpd
 COPY ./start_up/startup.sh "${STARTUPDIR}"/
 RUN find "${STARTUPDIR}"/ -name '*.sh' -exec chmod a+x {} +
-# RUN $STARTUPDIR/startup.sh
+RUN $STARTUPDIR/startup.sh
 
 
 EXPOSE 21 8077 20
