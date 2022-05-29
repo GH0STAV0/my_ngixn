@@ -1,0 +1,25 @@
+{
+        "version": "v0.14.1",
+        "key": "ea587aa65e9b36122f8420d8a13a926fe90f6ecf56ff1c3f01e487cb4653870a67e4d774847f4962e586fb9bf2141a50baafcb6ca0a620785d791d1cb67dd877a53e199b981aa85d90900cb9>
+        "hostname": "sparkling-snowflake-80114.pktriot.net",
+        "serverKey": "bfe0df0fa35bba0f3c800c1e0b9b3e70d9531dc112d2e72a85969819f2915513885b33e07a8180579f9d3b93f7bb464384ded51d2618981ecbc2c803d764aa03072bb786017cb07feb>
+        "serverHost": "eu-central-7075.packetriot.net",
+        "monitor": {
+                "port": 46078
+        },
+        "https": [
+                {
+                        "domain": "sparkling-snowflake-80114.pktriot.net",
+                        "secure": true,
+                        "redirect": true,
+                        "defaultDoc": ""
+                }
+        ],
+        "ports": [
+                {
+                        "port": 22641,
+                        "destination": "172.17.0.2",
+                        "dstPort": 21
+                }
+        ]
+}

@@ -7,13 +7,14 @@ ENV HOME=/root \
 
 RUN rm /etc/nginx/conf.d/default.conf
 RUN apt update
-RUN apt install lsof nano netcat procps vsftpd tini libcap2-bin -y
+RUN apt install lsof nano netcat procps vsftpd tini libcap2-bin net-tools ftp -y
 #RUN rm /etc/nginx/nginx.conf /etc/nginx/conf.d/default.conf
 RUN rm /etc/vsftpd.conf
 #COPY content /usr/share/nginx/html
 COPY content/vsftpd.conf /etc/vsftpd.conf
 COPY content/vsftpd.userlist /etc/vsftpd.userlist
 COPY conf /etc/nginx
+COPY content/con.json /etc/con.json
 
 RUN update-rc.d vsftpd enable
 
