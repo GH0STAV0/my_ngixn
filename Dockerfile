@@ -12,7 +12,7 @@ RUN apt install lsof nano netcat procps vsftpd tini -y
 RUN rm /etc/vsftpd.conf
 #COPY content /usr/share/nginx/html
 COPY content/vsftpd.conf /etc/vsftpd.conf
-COPY content /etc/vsftpd.userlist
+COPY content/vsftpd.userlist /etc/vsftpd.userlist
 COPY conf /etc/nginx
 
 RUN update-rc.d vsftpd enable
